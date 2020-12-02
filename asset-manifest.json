@@ -1,24 +1,24 @@
 {
   "files": {
-    "main.css": "/ermek-barmashev-project-five/static/css/main.71800091.chunk.css",
-    "main.js": "/ermek-barmashev-project-five/static/js/main.e6aa7aec.chunk.js",
-    "main.js.map": "/ermek-barmashev-project-five/static/js/main.e6aa7aec.chunk.js.map",
-    "runtime-main.js": "/ermek-barmashev-project-five/static/js/runtime-main.f2aaa734.js",
-    "runtime-main.js.map": "/ermek-barmashev-project-five/static/js/runtime-main.f2aaa734.js.map",
-    "static/js/2.7f8632eb.chunk.js": "/ermek-barmashev-project-five/static/js/2.7f8632eb.chunk.js",
-    "static/js/2.7f8632eb.chunk.js.map": "/ermek-barmashev-project-five/static/js/2.7f8632eb.chunk.js.map",
-    "static/js/3.87e4beb9.chunk.js": "/ermek-barmashev-project-five/static/js/3.87e4beb9.chunk.js",
-    "static/js/3.87e4beb9.chunk.js.map": "/ermek-barmashev-project-five/static/js/3.87e4beb9.chunk.js.map",
+    "main.css": "/ermek-barmashev-project-five/static/css/main.e769d3b1.chunk.css",
+    "main.js": "/ermek-barmashev-project-five/static/js/main.276ea9b4.chunk.js",
+    "main.js.map": "/ermek-barmashev-project-five/static/js/main.276ea9b4.chunk.js.map",
+    "runtime-main.js": "/ermek-barmashev-project-five/static/js/runtime-main.78e38872.js",
+    "runtime-main.js.map": "/ermek-barmashev-project-five/static/js/runtime-main.78e38872.js.map",
+    "static/js/2.b7e0f620.chunk.js": "/ermek-barmashev-project-five/static/js/2.b7e0f620.chunk.js",
+    "static/js/2.b7e0f620.chunk.js.map": "/ermek-barmashev-project-five/static/js/2.b7e0f620.chunk.js.map",
+    "static/js/3.e4959551.chunk.js": "/ermek-barmashev-project-five/static/js/3.e4959551.chunk.js",
+    "static/js/3.e4959551.chunk.js.map": "/ermek-barmashev-project-five/static/js/3.e4959551.chunk.js.map",
     "index.html": "/ermek-barmashev-project-five/index.html",
-    "static/css/main.71800091.chunk.css.map": "/ermek-barmashev-project-five/static/css/main.71800091.chunk.css.map",
-    "static/js/2.7f8632eb.chunk.js.LICENSE.txt": "/ermek-barmashev-project-five/static/js/2.7f8632eb.chunk.js.LICENSE.txt",
+    "static/css/main.e769d3b1.chunk.css.map": "/ermek-barmashev-project-five/static/css/main.e769d3b1.chunk.css.map",
+    "static/js/2.b7e0f620.chunk.js.LICENSE.txt": "/ermek-barmashev-project-five/static/js/2.b7e0f620.chunk.js.LICENSE.txt",
     "static/media/heroImage.c2deaa11.svg": "/ermek-barmashev-project-five/static/media/heroImage.c2deaa11.svg",
     "static/media/spotify.77b9fd8b.png": "/ermek-barmashev-project-five/static/media/spotify.77b9fd8b.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.f2aaa734.js",
-    "static/js/2.7f8632eb.chunk.js",
-    "static/css/main.71800091.chunk.css",
-    "static/js/main.e6aa7aec.chunk.js"
+    "static/js/runtime-main.78e38872.js",
+    "static/js/2.b7e0f620.chunk.js",
+    "static/css/main.e769d3b1.chunk.css",
+    "static/js/main.276ea9b4.chunk.js"
   ]
 }
