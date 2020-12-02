@@ -234,15 +234,31 @@ $transparentBlack: rgba(0, 0, 0, 0.1);
   text-overflow: ellipsis;
 }
 
+@keyframes removeSong {
+  0% {
+    opacity: 0.9;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  99% {
+    opacity: 0.1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
 .song {
   list-style-type: none;
   border-bottom: 1px solid $transparentBlack;
-  font-size: 2rem;
+  font-size: 1.6rem;
   text-align: center;
-  padding: 10px;
+  padding: 5px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  opacity: 1;
 
   p {
     @include noOverflow;
@@ -257,7 +273,11 @@ $transparentBlack: rgba(0, 0, 0, 0.1);
   }
 
   img {
-    height: 50px;
+    height: 30px;
+  }
+
+  div {
+    display: flex;
   }
 }
 
@@ -282,11 +302,11 @@ $transparentBlack: rgba(0, 0, 0, 0.1);
   }
 
   p {
-    font-size: 1rem;
+    font-size: 1.3rem;
   }
 
   h2 {
-    font-size: 4rem;
+    font-size: 3rem;
   }
 
   h3 {
@@ -389,7 +409,7 @@ header {
   }
 }
 
-//R
+//RESULTS
 
 .Results {
   background-color: $gray;
@@ -400,6 +420,10 @@ header {
   ul {
     width: 800px;
   }
+
+  .song.removeSong {
+    animation: removeSong 0.2s;
+  }
 }
 
 //SAVED PLAYLISTS
@@ -407,13 +431,17 @@ header {
 .SavedPlaylists {
   width: 800px;
   margin: 0 auto;
+
+  .song button {
+    display: none;
+  }
 }
 
 .savedPlaylistHeading {
   background-color: $black;
   cursor: pointer;
   h3 {
-    font-size: 2.7rem;
+    font-size: 2rem;
     color: white;
   }
 

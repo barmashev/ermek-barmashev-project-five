@@ -62,11 +62,13 @@ class App extends Component {
             return songObject;
           }
         });
+
       cleanResults.unshift({
         artist: artist,
         name: song,
         mbid: song,
       });
+
       this.setState({
         results: cleanResults,
         searchSong: song,
@@ -74,11 +76,6 @@ class App extends Component {
         choiceMade: true,
       });
     });
-  };
-
-  savePlaylist = () => {
-    const dbRef = firebase.database().ref();
-    dbRef.push(this.state.results);
   };
 
   showSavedPlaylists = () => {
@@ -108,7 +105,6 @@ class App extends Component {
               alt="cartoonish girl listening to the music"
             />
             <h1>Find similar songs</h1>
-            <button onClick={this.savePlaylist}>Save playlist</button>
             <SearchSection getResults={this.getResults} />
             <div className="sectionsControl">
               <button className="search" onClick={this.hideSavedPlaylists}>

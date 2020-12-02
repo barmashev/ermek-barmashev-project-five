@@ -19,6 +19,13 @@ function Song(props) {
         >
           <img src={spotifyLogo} alt="spotify logo" />
         </a>
+        <button
+          onClick={(e) => {
+            props.removeSong(props.index, e);
+          }}
+        >
+          Remove
+        </button>
       </div>
     </li>
   );
