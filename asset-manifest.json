@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/ermek-barmashev-project-five/static/css/main.e769d3b1.chunk.css",
-    "main.js": "/ermek-barmashev-project-five/static/js/main.276ea9b4.chunk.js",
-    "main.js.map": "/ermek-barmashev-project-five/static/js/main.276ea9b4.chunk.js.map",
+    "main.js": "/ermek-barmashev-project-five/static/js/main.541d9934.chunk.js",
+    "main.js.map": "/ermek-barmashev-project-five/static/js/main.541d9934.chunk.js.map",
     "runtime-main.js": "/ermek-barmashev-project-five/static/js/runtime-main.78e38872.js",
     "runtime-main.js.map": "/ermek-barmashev-project-five/static/js/runtime-main.78e38872.js.map",
     "static/js/2.b7e0f620.chunk.js": "/ermek-barmashev-project-five/static/js/2.b7e0f620.chunk.js",
@@ -19,6 +19,6 @@
     "static/js/runtime-main.78e38872.js",
     "static/js/2.b7e0f620.chunk.js",
     "static/css/main.e769d3b1.chunk.css",
-    "static/js/main.276ea9b4.chunk.js"
+    "static/js/main.541d9934.chunk.js"
   ]
 }
