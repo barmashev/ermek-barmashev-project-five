@@ -522,7 +522,7 @@ header {
 
 //MEDIA QUERIES
 /* Portrait tablet and small desktops */
-@media (max-width: 940px) {
+@media (max-width: 940px), (max-height: 990px) {
   h1 {
     font-size: 2.5rem;
   }
@@ -541,12 +541,6 @@ header {
   .SavedPlaylist {
     width: 100%;
   }
-
-  // .savedPlaylistHeading {
-  //   h3 {
-  //     font-size: ;
-  //   }
-  // }
 
   .secondHeading {
     h2 {
