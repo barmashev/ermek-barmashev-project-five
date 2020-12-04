@@ -13,13 +13,16 @@ class App extends Component {
 
     this.state = {
       results: "",
+      //Triggers the display of results section
       choiceMade: false,
-      savedPlaylists: "",
+      savedPlaylists: [],
+      //I need these ids for removing from firebase
       savedPlaylistsIds: "",
       showSavedPlaylists: false,
     };
   }
 
+  //Get the saved playlists from firebase
   componentDidMount() {
     const dbRef = firebase.database().ref();
 
@@ -39,6 +42,7 @@ class App extends Component {
     });
   }
 
+  //Get the actual similar songs
   getResults = (artist, song) => {
     axios({
       url: "https://ws.audioscrobbler.com/2.0/",
@@ -61,12 +65,13 @@ class App extends Component {
             playcount: songObject.playcount,
           };
         })
+        //Api calls brings back too many results. 20 songs is enough
         .filter((songObject, index) => {
           if (index < 21) {
             return songObject;
           }
         });
-
+      //Adds the searched song into playlist
       cleanResults.unshift({
         artist: artist,
         name: song,
@@ -81,11 +86,11 @@ class App extends Component {
       });
     });
   };
-
+  //Remove song from results
   removeSong = (index, e) => {
     const songElement = e.target.parentElement.parentElement;
     songElement.classList.add("removeSong");
-
+    //Animation for removing takes 200 millie seconds
     setTimeout(() => {
       const oldResults = [...this.state.results];
       oldResults.splice(index, 1);
@@ -116,6 +121,7 @@ class App extends Component {
     });
   };
 
+  //Adds playlist to db
   savePlaylist = () => {
     const dbRef = firebase.database().ref();
     dbRef.push(this.state.results);
@@ -126,6 +132,7 @@ class App extends Component {
     dbRef.child(playlistId).remove();
   };
 
+  //Removes playlist from db
   render() {
     return (
       <div className="App">
@@ -147,10 +154,12 @@ class App extends Component {
                 onClick={this.showSavedPlaylists}
               >
                 SAVED
+                <p>{this.state.savedPlaylists.length}</p>
               </button>
             </div>
           </header>
 
+          {/* Logic that determines what should be on the page saved playlists or results */}
           {this.state.choiceMade && !this.state.showSavedPlaylists ? (
             <Results
               results={this.state.results}

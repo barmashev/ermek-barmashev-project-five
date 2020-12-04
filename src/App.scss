@@ -405,6 +405,7 @@ header {
   bottom: -210px;
   left: 0;
   right: 0;
+  z-index: 2;
 
   .SuggestedResult {
     @include noOverflow;
@@ -441,6 +442,18 @@ header {
   .showSavedPlaylists {
     border-top-right-radius: 15px;
     border-bottom-right-radius: 15px;
+    position: relative;
+
+    p {
+      font-size: 1.2rem;
+      position: absolute;
+      top: -12%;
+      right: -5%;
+      border-radius: 50%;
+      color: white;
+      background-color: red;
+      padding: 5px 10px;
+    }
   }
 
   .activeButton {
