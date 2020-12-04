@@ -565,9 +565,14 @@ header {
 
 /* Landscape phone to portrait tablet */
 @media (max-width: 768px) {
+  header {
+    font-size: 1.2rem;
+  }
+
   .secondHeading {
     h2 {
       font-size: 1.6rem;
+      margin: 4px 0;
     }
 
     h3 {
@@ -590,10 +595,40 @@ header {
       font-size: 1.2rem;
     }
   }
+
+  .savePlaylist,
+  .removeSong,
+  .removePlaylist {
+    font-size: 1.2rem;
+  }
 }
 
 /* Landscape phones and down */
-@media (max-width: 480px) {
+@media (max-width: 500px) {
+  h1 {
+    font-size: 2rem;
+  }
+
+  .SuggestedResults {
+    width: 95%;
+    bottom: -135px;
+  }
+
+  .sectionsControl {
+    width: 80%;
+
+    button {
+      font-size: 1.2rem;
+    }
+  }
+
+  .wrapper {
+    transform: none;
+  }
+
+  header form input {
+    width: 98%;
+  }
   .savedPlaylistHeading {
     flex-direction: column;
     align-items: center;
@@ -608,6 +643,15 @@ header {
     }
     button {
       margin-top: 15px;
+    }
+  }
+
+  .song {
+    flex-direction: column;
+
+    p {
+      width: 95%;
+      text-align: center;
     }
   }
 }
