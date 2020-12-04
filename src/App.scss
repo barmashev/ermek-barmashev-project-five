@@ -234,21 +234,6 @@ $transparentBlack: rgba(0, 0, 0, 0.1);
   text-overflow: ellipsis;
 }
 
-@keyframes removeSong {
-  0% {
-    opacity: 0.9;
-  }
-  50% {
-    opacity: 0.5;
-  }
-  99% {
-    opacity: 0.1;
-  }
-  100% {
-    opacity: 0;
-  }
-}
-
 .song {
   list-style-type: none;
   border-bottom: 1px solid $transparentBlack;
@@ -278,17 +263,20 @@ $transparentBlack: rgba(0, 0, 0, 0.1);
 
   div {
     display: flex;
+    align-items: center;
+    justify-content: space-between;
   }
 }
 
 .secondHeading {
-  height: 200px;
+  padding: 20px;
   background-color: $yellow;
   width: 100%;
   color: $black;
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-bottom: 20px;
 
   p,
   h2,
@@ -312,6 +300,31 @@ $transparentBlack: rgba(0, 0, 0, 0.1);
   h3 {
     font-size: 2rem;
   }
+}
+
+.savePlaylist,
+.removeSong,
+.removePlaylist {
+  border: none;
+  padding: 10px 15px;
+  background-color: $black;
+  color: white;
+  font-size: 1.6rem;
+  margin: 10px 0;
+  border-radius: 15px;
+  cursor: pointer;
+}
+
+.removeSong,
+.removePlaylist {
+  font-size: 1rem;
+  margin: 0;
+  padding: 0px 12px;
+  height: 30px;
+}
+
+.removePlaylist {
+  background-color: $yellow;
 }
 
 //GENERAL STYLES
@@ -341,15 +354,12 @@ body {
   margin: 0 auto;
   left: 0;
   right: 0;
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
+  transform: translateY(90%);
   transition: all 0.5s;
 }
 
 .wrapper.animated {
-  top: 2%;
-  transform: translateY(-0%);
+  transform: translateY(1%);
 }
 
 header {
@@ -358,8 +368,9 @@ header {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin-bottom: 10px;
   h1 {
-    margin-bottom: 50px;
+    margin-bottom: 15px;
     font-family: "Vollkorn", serif;
   }
 
@@ -370,8 +381,8 @@ header {
       width: 500px;
       height: 50px;
       border: 3px solid $gray;
-      border-radius: 30px;
-      padding: 10px 20px;
+      border-radius: 15px;
+      padding: 25px;
       margin-bottom: 30px;
       transition: border 1s;
     }
@@ -382,7 +393,7 @@ header {
   }
 
   .heroImage {
-    width: 200px;
+    width: 150px;
     margin: 30px;
   }
 }
@@ -409,7 +420,51 @@ header {
   }
 }
 
+.sectionsControl {
+  width: 450px;
+  border-radius: 5px;
+  button {
+    width: 50%;
+    border: none;
+    background-color: $black;
+    color: white;
+    padding: 10px 2px;
+    font-weight: 700;
+    cursor: pointer;
+  }
+
+  .showResults {
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+  }
+
+  .showSavedPlaylists {
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+  }
+
+  .activeButton {
+    background-color: $yellow;
+    color: $black;
+  }
+}
+
 //RESULTS
+
+@keyframes removeSong {
+  0% {
+    opacity: 0.9;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  99% {
+    opacity: 0.1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
 
 .Results {
   background-color: $gray;
@@ -427,8 +482,7 @@ header {
 }
 
 //SAVED PLAYLISTS
-
-.SavedPlaylists {
+.SavedPlaylist {
   width: 800px;
   margin: 0 auto;
 
@@ -440,13 +494,126 @@ header {
 .savedPlaylistHeading {
   background-color: $black;
   cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 10px;
+  border: 1px solid $yellow;
+
+  div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
   h3 {
-    font-size: 2rem;
+    font-size: 1.6rem;
     color: white;
+    max-width: 550px;
+    @include noOverflow;
   }
 
   svg {
     color: $yellow;
     margin-left: 10px;
+    font-size: 1.7rem;
+  }
+}
+
+//MEDIA QUERIES
+/* Portrait tablet and small desktops */
+@media (max-width: 940px) {
+  h1 {
+    font-size: 2.5rem;
+  }
+
+  input,
+  button {
+    font-size: 1.6rem;
+  }
+  .Results {
+    ul {
+      width: 100%;
+      margin: 0 auto;
+    }
+  }
+
+  .SavedPlaylist {
+    width: 100%;
+  }
+
+  // .savedPlaylistHeading {
+  //   h3 {
+  //     font-size: ;
+  //   }
+  // }
+
+  .secondHeading {
+    h2 {
+      font-size: 2rem;
+    }
+
+    h3 {
+      font-size: 1.6rem;
+    }
+
+    p {
+      font-size: 1rem;
+    }
+  }
+
+  .song {
+    p {
+      width: 70%;
+    }
+  }
+}
+
+/* Landscape phone to portrait tablet */
+@media (max-width: 768px) {
+  .secondHeading {
+    h2 {
+      font-size: 1.6rem;
+    }
+
+    h3 {
+      font-size: 1.2rem;
+    }
+
+    p {
+      font-size: 1rem;
+    }
+  }
+
+  .savedPlaylistHeading {
+    h3 {
+      font-size: 1.4rem;
+    }
+  }
+
+  .song {
+    p {
+      font-size: 1.2rem;
+    }
+  }
+}
+
+/* Landscape phones and down */
+@media (max-width: 480px) {
+  .savedPlaylistHeading {
+    flex-direction: column;
+    align-items: center;
+
+    div {
+      width: 95%;
+      margin: 0 auto;
+      h3 {
+        width: 90%;
+        @include noOverflow;
+      }
+    }
+    button {
+      margin-top: 15px;
+    }
   }
 }

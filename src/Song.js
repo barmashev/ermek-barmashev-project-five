@@ -20,11 +20,12 @@ function Song(props) {
           <img src={spotifyLogo} alt="spotify logo" />
         </a>
         <button
+          className={"removeSong"}
           onClick={(e) => {
             props.removeSong(props.index, e);
           }}
         >
-          Remove
+          REMOVE
         </button>
       </div>
     </li>

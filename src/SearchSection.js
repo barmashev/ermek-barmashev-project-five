@@ -33,7 +33,7 @@ class SearchSection extends Component {
   getSuggestedResults() {
     if (this.state.searchSuggestionsQuery) {
       axios({
-        url: "http://ws.audioscrobbler.com/2.0/",
+        url: "https://ws.audioscrobbler.com/2.0/",
         responseType: "json",
         method: "GET",
         params: {

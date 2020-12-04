@@ -5,8 +5,14 @@ function SavedPlaylists(props) {
       <div className="secondHeading">
         <h2>You have {props.savedPlaylists.length} saved playlists</h2>
       </div>
-      {props.savedPlaylists.map((playlist) => {
-        return <SavedPlaylist playlist={playlist} />;
+      {props.savedPlaylists.map((playlist, index) => {
+        return (
+          <SavedPlaylist
+            playlist={playlist}
+            removePlaylist={props.removePlaylist}
+            id={props.savedPlaylistsIds[index]}
+          />
+        );
       })}
     </div>
   );

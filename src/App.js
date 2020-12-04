@@ -12,9 +12,10 @@ class App extends Component {
     super();
 
     this.state = {
-      results: [],
+      results: "",
       choiceMade: false,
       savedPlaylists: "",
+      savedPlaylistsIds: "",
       showSavedPlaylists: false,
     };
   }
@@ -25,19 +26,22 @@ class App extends Component {
     dbRef.on("value", (response) => {
       const dataObject = response.val();
       const savedPlaylistsArray = [];
+      const savedPlaylistsIds = [];
       for (let playlist in dataObject) {
         savedPlaylistsArray.push(dataObject[playlist]);
+        savedPlaylistsIds.push(playlist);
       }
 
       this.setState({
         savedPlaylists: savedPlaylistsArray,
+        savedPlaylistsIds: savedPlaylistsIds,
       });
     });
   }
 
   getResults = (artist, song) => {
     axios({
-      url: "http://ws.audioscrobbler.com/2.0/",
+      url: "https://ws.audioscrobbler.com/2.0/",
       responseType: "json",
       method: "GET",
       params: {
@@ -78,8 +82,24 @@ class App extends Component {
     });
   };
 
-  showSavedPlaylists = () => {
+  removeSong = (index, e) => {
+    const songElement = e.target.parentElement.parentElement;
+    songElement.classList.add("removeSong");
+
+    setTimeout(() => {
+      const oldResults = [...this.state.results];
+      oldResults.splice(index, 1);
+      this.setState({
+        results: oldResults,
+      });
+    }, 200);
+  };
+
+  showSavedPlaylists = (e) => {
+    e.target.classList.add("activeButton");
+    e.target.previousSibling.classList.remove("activeButton");
     document.querySelector(".wrapper").classList.add("animated");
+
     setTimeout(() => {
       this.setState({
         showSavedPlaylists: true,
@@ -87,11 +107,23 @@ class App extends Component {
     }, 500);
   };
 
-  hideSavedPlaylists = () => {
-    console.log("hide");
+  hideSavedPlaylists = (e) => {
+    e.target.classList.add("activeButton");
+    e.target.nextSibling.classList.remove("activeButton");
+
     this.setState({
       showSavedPlaylists: false,
     });
+  };
+
+  savePlaylist = () => {
+    const dbRef = firebase.database().ref();
+    dbRef.push(this.state.results);
+  };
+
+  removePlaylist = (playlistId) => {
+    const dbRef = firebase.database().ref();
+    dbRef.child(playlistId).remove();
   };
 
   render() {
@@ -107,14 +139,14 @@ class App extends Component {
             <h1>Find similar songs</h1>
             <SearchSection getResults={this.getResults} />
             <div className="sectionsControl">
-              <button className="search" onClick={this.hideSavedPlaylists}>
-                Search
+              <button className="showResults" onClick={this.hideSavedPlaylists}>
+                RESULTS
               </button>
               <button
-                className="showSavedPlaylist"
+                className="showSavedPlaylists"
                 onClick={this.showSavedPlaylists}
               >
-                Saved Playlist
+                SAVED
               </button>
             </div>
           </header>
@@ -124,10 +156,16 @@ class App extends Component {
               results={this.state.results}
               searchSong={this.state.searchSong}
               searchArtist={this.state.searchArtist}
+              removeSong={this.removeSong}
+              savePlaylist={this.savePlaylist}
             />
           ) : (
             this.state.showSavedPlaylists && (
-              <SavedPlaylists savedPlaylists={this.state.savedPlaylists} />
+              <SavedPlaylists
+                savedPlaylists={this.state.savedPlaylists}
+                savedPlaylistsIds={this.state.savedPlaylistsIds}
+                removePlaylist={this.removePlaylist}
+              />
             )
           )}
         </div>
