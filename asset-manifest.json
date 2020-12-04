@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/ermek-barmashev-project-five/static/css/main.f0405ad8.chunk.css",
-    "main.js": "/ermek-barmashev-project-five/static/js/main.ed8bc6d5.chunk.js",
-    "main.js.map": "/ermek-barmashev-project-five/static/js/main.ed8bc6d5.chunk.js.map",
+    "main.css": "/ermek-barmashev-project-five/static/css/main.7affcdd3.chunk.css",
+    "main.js": "/ermek-barmashev-project-five/static/js/main.9ebac60e.chunk.js",
+    "main.js.map": "/ermek-barmashev-project-five/static/js/main.9ebac60e.chunk.js.map",
     "runtime-main.js": "/ermek-barmashev-project-five/static/js/runtime-main.78e38872.js",
     "runtime-main.js.map": "/ermek-barmashev-project-five/static/js/runtime-main.78e38872.js.map",
     "static/js/2.a1ea4c01.chunk.js": "/ermek-barmashev-project-five/static/js/2.a1ea4c01.chunk.js",
@@ -10,7 +10,7 @@
     "static/js/3.e4959551.chunk.js": "/ermek-barmashev-project-five/static/js/3.e4959551.chunk.js",
     "static/js/3.e4959551.chunk.js.map": "/ermek-barmashev-project-five/static/js/3.e4959551.chunk.js.map",
     "index.html": "/ermek-barmashev-project-five/index.html",
-    "static/css/main.f0405ad8.chunk.css.map": "/ermek-barmashev-project-five/static/css/main.f0405ad8.chunk.css.map",
+    "static/css/main.7affcdd3.chunk.css.map": "/ermek-barmashev-project-five/static/css/main.7affcdd3.chunk.css.map",
     "static/js/2.a1ea4c01.chunk.js.LICENSE.txt": "/ermek-barmashev-project-five/static/js/2.a1ea4c01.chunk.js.LICENSE.txt",
     "static/media/heroImage.c2deaa11.svg": "/ermek-barmashev-project-five/static/media/heroImage.c2deaa11.svg",
     "static/media/spotify.77b9fd8b.png": "/ermek-barmashev-project-five/static/media/spotify.77b9fd8b.png"
@@ -18,7 +18,7 @@
   "entrypoints": [
     "static/js/runtime-main.78e38872.js",
     "static/js/2.a1ea4c01.chunk.js",
-    "static/css/main.f0405ad8.chunk.css",
-    "static/js/main.ed8bc6d5.chunk.js"
+    "static/css/main.7affcdd3.chunk.css",
+    "static/js/main.9ebac60e.chunk.js"
   ]
 }
