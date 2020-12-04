@@ -177,6 +177,12 @@ class App extends Component {
               />
             )
           )}
+          {(this.state.choiceMade) ||
+            (this.state.showSavedPlaylists) && (
+              <footer>
+                Powered by my diminishing will to even try and Last FM API
+              </footer>
+            )}
         </div>
       </div>
     );
