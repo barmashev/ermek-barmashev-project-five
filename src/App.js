@@ -143,7 +143,7 @@ class App extends Component {
               src={heroImage}
               alt="cartoonish girl listening to the music"
             />
-            <h1>Find similar songs</h1>
+            <h1>Likely Match</h1>
             <SearchSection getResults={this.getResults} />
             <div className="sectionsControl">
               <button className="showResults" onClick={this.hideSavedPlaylists}>
@@ -177,12 +177,12 @@ class App extends Component {
               />
             )
           )}
-          {(this.state.choiceMade) ||
-            (this.state.showSavedPlaylists) && (
+          {this.state.choiceMade ||
+            (this.state.showSavedPlaylists && (
               <footer>
                 Powered by my diminishing will to even try and Last FM API
               </footer>
-            )}
+            ))}
         </div>
       </div>
     );
